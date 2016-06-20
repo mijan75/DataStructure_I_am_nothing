@@ -67,9 +67,7 @@ int main()
                 }
                 else if (String[j] == ')' || String[j] == ']')
                 {
-                    int stack_aschi = s.peek();
-                    int string_aschi = String[j];
-                    if ((s.getTop() == -1)|| ((stack_aschi != (string_aschi - 1)) && (stack_aschi != (string_aschi - 2))))
+                    if ((s.getTop() == -1)|| ((String[j] != (s.peek() + 1)) && (String[j] != (s.peek()+2))))
                     {
                         cout <<"No" <<endl;
                         i = i+1;
