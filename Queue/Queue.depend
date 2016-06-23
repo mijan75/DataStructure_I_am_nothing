@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1466628416 source:/home/mijan/Documents/Queue/main.cpp
+	<iostream>
+	"queue.h"
+
+1466628400 /home/mijan/Documents/Queue/queue.cpp
+	"queue.h"
+
+1466628272 /home/mijan/Documents/Queue/queue.h
+
+1466628400 source:/home/mijan/Documents/Queue/queue.cpp
+	"queue.h"
+
