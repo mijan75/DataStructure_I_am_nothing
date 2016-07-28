@@ -13,6 +13,7 @@ int choice;
 void infix_to_postfix(char arr[100]);
 void infix_to_prefix(char arr[100]);
 void postfix_to_infix();
+void prefix_to_infix();
 
 class Stack
 {
@@ -151,6 +152,14 @@ int main()
             cout << "Enter your postfix expression" <<endl;
             postfix_to_infix();
             break;
+        case 5:
+            cout << "Enter your prefix expression" <<endl;
+            prefix_to_infix();
+            break;
+        case 6:
+            cout << "Enter your prefix expression" <<endl;
+            prefix_to_infix();
+            break;
     }
 
     return 0;
@@ -166,7 +175,7 @@ void infix_to_postfix(char arr[100])
             s.addToAnswer(arr[i]);
         }
 
-        else if (arr[i] >=65 && arr[i]<=90)
+        else if (arr[i] >=65 && arr[i]<=90 || arr[i] >=97 && arr[i] <= 122)
         {
             s.addToAnswer(arr[i]);
         }
@@ -303,7 +312,7 @@ void infix_to_prefix(char arr[100])
             s.addToAnswer(arr[i]);
         }
 
-        else if (arr[i] >=65 && arr[i]<=90)
+        else if (arr[i] >=65 && arr[i]<=90 || arr[i] >=97 && arr[i] <= 122)
         {
             s.addToAnswer(arr[i]);
         }
@@ -484,5 +493,72 @@ void postfix_to_infix()
         strcpy(convert_input,input.c_str());
         infix_to_prefix(convert_input);
     }
+};
+
+void prefix_to_infix()
+{
+    char arr1[100];
+    string a;
+    Stack1 s;
+    gets(arr1);
+    int lenght = strlen(arr1);
+    for (int j=lenght; j>0; j--)
+    {
+        arr1[j] = arr1[j-1];
+    }
+    arr1[0] = ' ';
+    lenght = lenght + 1;
+
+    int first = lenght - 1, second = 0;
+
+
+    for (int i=lenght-1; i>=0; i--)
+    {
+
+        if (arr1[i] == ' ')
+        {
+            second = i;
+            a = "";
+            for (int j=second+1; j<=first; j++)
+            {
+                a = a+arr1[j];
+            }
+
+            first = second - 1;
+
+            if (arr1[i+1] == '+' || arr1[i+1] == '-' || arr1[i+1] == '*' || arr1[i+1] == '/')
+            {
+                string c = s.peek();
+                s.pop();
+                string b = s.peek();
+                s.pop();
+                string output;
+                output = "("+c+a+b+ ")";
+                s.push(output);
+            }
+
+            else
+            {
+                s.push(a);
+            }
+        }
+    }
+
+    if (choice == 5)
+    {
+        cout <<endl;
+        cout << "The infix expression : ";
+        cout << s.peek();
+        cout <<endl;
+    }
+
+    else
+    {
+        input = s.peek();
+        length = input.length();
+        strcpy(convert_input,input.c_str());
+        infix_to_postfix(convert_input);
+    }
+
 };
 
