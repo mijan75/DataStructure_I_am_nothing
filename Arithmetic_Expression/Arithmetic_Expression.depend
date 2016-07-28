@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1469720779 source:/home/mijan/Documents/Arithmetic_Expression/main.cpp
+	<iostream>
+	<cstring>
+	<string.h>
+	<stdio.h>
+	"stack.h"
+	"stack1.h"
+
+1469720647 /home/mijan/Documents/Arithmetic_Expression/stack.h
+
+1469720858 /home/mijan/Documents/Arithmetic_Expression/stack1.h
+	<iostream>
+
+1469720647 source:/home/mijan/Documents/Arithmetic_Expression/stack.cpp
+	"stack.h"
+	<iostream>
+
+1469720719 source:/home/mijan/Documents/Arithmetic_Expression/stack1.cpp
+	"stack1.h"
+	<iostream>
+
