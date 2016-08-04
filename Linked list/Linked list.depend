@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1469810049 source:/home/mijan/Documents/Linked list/main.cpp
+	<iostream>
+	<cstdlib>
+
+1469784715 source:/home/mijan/Documents/Linked list/node.cpp
+	<cstdlib>
+	<iostream>
+
