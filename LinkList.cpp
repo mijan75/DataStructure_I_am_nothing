@@ -21,7 +21,7 @@ public:
 
 class LinkedList{
 public:
-    static Node *head;
+    Node *head;
 
     LinkedList()
     {
@@ -112,15 +112,6 @@ public:
 
     }
 
-    void Reverse(Node *n = head)
-    {
-        if(n == NULL) return;
-        else Reverse(n->next);
-
-        cout << n->data << " ";
-
-    }
-
     void print()
     {
         for (Node *i=head; i != NULL; i = i->next)
@@ -142,8 +133,7 @@ int main()
     a.insertIntoBottom(19);
     a.insertIntoBottom(11);
     //a.deleteFromBottom();
-    a.Reverse();
     //a.Delete(11);
-    //a.print();
+    a.print();
     return 0;
 }
